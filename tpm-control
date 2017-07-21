@@ -1,0 +1,6 @@
+PACKAGE='safinaskar/tpm-hello'
+ARCH='any'
+DEPENDS=''
+BUILD_DEPENDS='prog:cmake:cmake prog:make:make prog:cc:gcc'
+LIBS='libc:6'
+INSTALL='cmake -DCMAKE_INSTALL_PREFIX="$PREFIX" . > /dev/null && make && make install DESTDIR="$DESTDIR" > /dev/null'
