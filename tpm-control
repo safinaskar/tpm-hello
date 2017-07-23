@@ -1,8 +1,11 @@
 PACKAGE='safinaskar/tpm-hello'
 ARCH='any'
+
+# IDEAL201706DEPENDS. Build depends: cmake 3.0.2, cmake backend, C89 build environment. Depends: C89 runtime
 DEPENDS=''
 BUILD_DEPENDS='prog:cmake:cmake prog:make:make prog:cc:gcc'
 LIBS='libc:6'
+
 INSTALL='[ -e CMakeCache.txt ] && echo "Failed: CMakeCache.txt" && exit 1;'\
 \
-'rm -rf tpm-build && mkdir tpm-build && cd tpm-build && cmake -DCMAKE_INSTALL_PREFIX="$PREFIX" .. && make install && cd ..; rm -rf tpm-build'
+'cd "$BUILD" && cmake -DCMAKE_INSTALL_PREFIX="$PREFIX" "$SRC" && make install'
